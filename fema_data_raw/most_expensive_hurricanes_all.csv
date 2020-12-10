@@ -1,0 +1,215 @@
+﻿Name,Nominal_Damage_Billions,Normalize_Damage_Billions,Season,Storm classification,Areas affected
+,,,,,
+Betsy,$1.40 ,<$6.0,1965,Category 4 hurricane,Louisiana
+,,,,,South Florida
+,,,,,Caribbean
+Camille,$1.40 ,$26.40 ,1969,Category 5 hurricane,Mississippi
+,,,,,Louisiana
+,,,,,Alabama
+,,,,,Virginia
+,,,,,Cuba
+Agnes,$2.10 ,$26.00 ,1972,Category 1 hurricane,Mexico
+,,,,,Cuba
+,,,,,Eastern United States
+Fifi,$1.80 ,<$6.0,1974,Category 2 hurricane,Jamaica
+,,,,,Central America
+,,,,,Mexico
+Frederic,$1.80 ,<$6.0,1979,Category 4 hurricane,The Caribbean
+,,,,,Southeastern United States
+David,$1.50 ,<$6.0,1979,Category 5 hurricane,The Caribbean
+,,,,,United States East Coast
+Allen,$1.60 ,<$6.0,1980,Category 5 hurricane,The Caribbean
+,,,,,Yucatán Peninsula
+,,,,,Mexico
+,,,,,South Texas
+Alicia,$3.00 ,$13.60 ,1983,Category 3 hurricane,East Texas
+,,,,,Louisiana
+Juan ,$1.50 ,<$6.0,1985,Category 1 hurricane,United States Gulf Coast
+Elena,$1.30 ,<$6.0,1985,Category 3 hurricane,Cuba
+,,,,,United States Gulf Coast
+Joan,$1.90 ,<$6.0,1988,Category 4 hurricane,Lesser Antilles
+,,,,,Colombia
+,,,,,Venezuela
+,,,,,Central America
+Gilbert,$3.00 ,<$6.0,1988,Category 5 hurricane,Venezuela
+,,,,,Central America
+,,,,,Hispaniola
+,,,,,Mexico
+Hugo,$9.50 ,$25.10 ,1989,Category 5 hurricane,The Caribbean
+,,,,,United States East Coast
+Bob,$1.50 ,<$6.0,1991,Category 3 hurricane,United States East Coast
+,,,,,Canada
+Andrew,$27.30 ,$106.00 ,1992,Category 5 hurricane,The Bahamas
+,,,,,Florida
+,,,,,Louisiana
+Alberto ,$1.00 ,<$6.0,1994,Tropical storm,Southeastern United States
+Roxanne,$1.50 ,<$6.0,1995,Category 3 hurricane,Mexico
+Opal,$4.70 ,$10.00 ,1995,Category 4 hurricane,Guatemala
+,,,,,Yucatán Peninsula
+,,,,,Eastern United States
+Marilyn,$2.10 ,<$6.0,1995,Category 3 hurricane,The Caribbean
+,,,,,Bermuda
+Luis,$3.00 ,<$6.0,1995,Category 4 hurricane,Leeward Islands
+,,,,,Puerto Rico
+,,,,,Bermuda
+Fran,$5.00 ,$11.10 ,1996,Category 3 hurricane,Eastern United States
+,,,,,Ontario
+Mitch,$6.10 ,<$6.0,1998,Category 5 hurricane,Central America
+,,,,,Yucatán Peninsula
+,,,,,South Florida
+Georges,$13.90 ,<$6.0,1998,Category 4 hurricane,The Caribbean
+,,,,,United States Gulf Coast
+Bonnie ,$1.00 ,<$6.0,1998,Category 3 hurricane,Lesser Antilles
+,,,,,East Coast of the United States
+Floyd,$6.50 ,$13.90 ,1999,Category 4 hurricane,The Bahamas
+,,,,,Eastern United States
+,,,,,Atlantic Canada
+Michelle,$2.40 ,<$6.0,2001,Category 4 hurricane,Central America
+,,,,,Jamaica
+,,,,,Cuba
+,,,,,The Bahamas
+Allison,$8.50 ,<$6.0,2001,Tropical storm,Texas
+,,,,,Louisiana
+,,,,,Southern United States
+Lili,$1.20 ,<$6.0,2002,Category 4 hurricane,Lesser Antilles
+,,,,,Greater Antilles
+,,,,,Gulf Coast of the United States
+Isidore,$1.30 ,<$6.0,2002,Category 3 hurricane,Cuba
+,,,,,Yucatán Peninsula
+,,,,,Louisiana
+Isabel,$5.50 ,<$6.0,2003,Category 5 hurricane,Greater Antilles
+,,,,,The Bahamas
+,,,,,Eastern United States
+,,,,,Ontario
+Jeanne,$7.90 ,$13.60 ,2004,Category 3 hurricane,The Caribbean
+,,,,,Eastern United States
+Ivan,$26.10 ,$25.90 ,2004,Category 5 hurricane,The Caribbean
+,,,,,Venezuela
+,,,,,United States Gulf Coast
+Frances,$10.10 ,$16.50 ,2004,Category 4 hurricane,The Caribbean
+,,,,,Eastern United States
+,,,,,Ontario
+Charley,$16.90 ,$26.90 ,2004,Category 4 hurricane,Jamaica
+,,,,,Cayman Islands
+,,,,,Cuba
+,,,,,Florida
+,,,,,The Carolinas
+Wilma,$27.40 ,$31.90 ,2005,Category 5 hurricane,Greater Antilles
+,,,,,Central America
+,,,,,Florida
+Stan,$3.90 ,<$6.0,2005,Category 1 hurricane,Mexico
+,,,,,Central America
+Rita,$18.50 ,$14.90 ,2005,Category 5 hurricane,Cuba
+,,,,,Texas
+,,,,,Louisiana
+Katrina,$125.00 ,$116.90 ,2005,Category 5 hurricane,Louisiana
+,,,,,Mississippi
+,,,,,The Bahamas
+,,,,,United States Gulf Coast
+,,,,,South Florida
+,,,,,Northeast
+,,,,,Eastern Canada
+Emily ,$1.00 ,<$6.0,2005,Category 5 hurricane,The Caribbean
+,,,,,Honduras
+,,,,,Belize
+,,,,,Mexico
+,,,,,Texas
+Dennis,$4.00 ,<$6.0,2005,Category 4 hurricane,Greater Antilles
+,,,,,Southeastern United States
+Dean,$2.00 ,<$6.0,2007,Category 5 hurricane,The Caribbean
+,,,,,Central America
+Ike,$38.00 ,$35.20 ,2008,Category 4 hurricane,Greater Antilles
+,,,,,Texas
+,,,,,Louisiana
+,,,,,Midwestern United States
+,,,,,Eastern Canada
+,,,,,Iceland
+Gustav,$8.30 ,<$6.0,2008,Category 4 hurricane,Hispaniola
+,,,,,Jamaica
+,,,,,Cuba
+,,,,,Louisiana
+Dolly ,$1.60 ,<$6.0,2008,Category 2 hurricane,Cayman Islands
+,,,,,Mexico
+,,,,,Southwestern United States
+Karl ,$3.90 ,<$6.0,2010,Category 3 hurricane,Mexico
+,,,,,Central America
+Alex ,$1.50 ,<$6.0,2010,Category 2 hurricane,Central America
+,,,,,Greater Antilles
+,,,,,Texas
+Lee ,$2.80 ,<$6.0,2011,Tropical storm,Louisiana
+,,,,,Mississippi
+Irene,$14.20 ,$10.80 ,2011,Category 3 hurricane,The Caribbean
+,,,,,United States East Coast
+,,,,,Eastern Canada
+Sandy,$68.70 ,$73.50 ,2012,Category 3 hurricane,The Caribbean
+,,,,,United States East Coast
+,,,,,Eastern Canada
+Isaac ,$3.10 ,<$6.0,2012,Category 1 hurricane,The Caribbean
+,,,,,Eastern United States
+Ingrid,$1.50 ,<$6.0,2013,Category 1 hurricane,Mexico
+Matthew,$16.50 ,$8.60 ,2016,Category 5 hurricane,Colombia
+,,,,,Venezuela
+,,,,,The Caribbean
+,,,,,United States East Coast
+Maria,$91.60 ,N/A,2017,Category 5 hurricane,Puerto Rico
+,,,,,Lesser Antilles
+,,,,,Greater Antilles
+,,,,,Caribbean Sea
+,,,,,Eastern United States
+Irma,$77.20 ,$31.00 ,2017,Category 5 hurricane,Lesser Antilles
+,,,,,Greater Antilles
+,,,,,Caribbean Sea
+,,,,,Eastern United States
+Harvey,$125.00 ,$62.20 ,2017,Category 4 hurricane,Texas
+,,,,,Louisiana
+,,,,,South America
+,,,,,Central America
+,,,,,The Caribbean
+,,,,,Yucatan Peninsula
+Michael,$25.10 ,N/A,2018,Category 5 hurricane,Central America
+,,,,,Florida
+,,,,,Georgia
+,,,,,United States Gulf Coast
+,,,,,Eastern United States
+,,,,,Eastern Canada
+,,,,,Iberian Peninsula
+Florence,$24.20 ,N/A,2018,Category 4 hurricane,West Africa
+,,,,,Cape Verde
+,,,,,Bermuda
+,,,,,Eastern United States
+,,,,,Atlantic Canada
+Imelda ,$5.00 ,N/A,2019,Tropical storm,Texas
+,,,,,Louisiana
+,,,,,Oklahoma
+,,,,,Arkansas
+Dorian ,$5.10 ,N/A,2019,Category 5 hurricane,The Caribbean
+,,,,,The Bahamas
+,,,,,Eastern United States
+,,,,,Atlantic Canada
+Zeta ,$3.20 ,N/A,2020,Category 2 hurricane,Jamaica
+,,,,,Yucatan Peninsula
+,,,,,Louisiana
+,,,,,Mississippi
+Sally ,$5.00 ,N/A,2020,Category 2 hurricane,The Bahamas
+,,,,,Florida
+,,,,,Southeastern United States
+Laura ,$14.10 ,N/A,2020,Category 4 hurricane,Leeward Islands
+,,,,,Puerto Rico
+,,,,,Dominican Republic
+,,,,,Haiti
+,,,,,Cuba
+,,,,,Southeastern United States
+Isaias ,$4.70 ,N/A,2020,Category 1 hurricane,Puerto Rico
+,,,,,Dominican Republic
+,,,,,Haiti
+,,,,,Bahamas
+,,,,,Eastern United States
+Eta ,$6.60 ,N/A,2020,Category 4 hurricane,The Caribbean
+,,,,,Central America
+,,,,,Cuba
+,,,,,Eastern United States
+Delta ,$4.10 ,N/A,2020,Category 4 hurricane,Jamaica
+,,,,,Cayman Islands
+,,,,,Yucatan Peninsula
+,,,,,Southeastern United States
+,,,,,
