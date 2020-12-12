@@ -12,137 +12,164 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> 
     </head>
 <body>
-    <div class="wrapper">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3 class="project-name">Weather Bees</h3>
-                <img src="/static/images/mr_weatherbee.png" alt="Mr.Weatherbee Himself" style='height: 100%; width: 100%; object-fit: contain'>
-            </div>
-            <ul class="list-unstyled-components">
-                <p>Ask Questions <br> Find Answers</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    <body> 
-<div class="container"> 
+<div class="container-fluid"> 
     <div class="row"> 
-        <div class="col-sm-4"> 
-            <div class="card">  
-                <div class="my-card-body">
-                    <div class="card-front"> 
-                        <h5>Fact 1</h5> 
-                        <p class="card-text"> 
-                            Some quick example text to build on the  
-                            card title and make up the bulk of the  
-                            card's content. 
-                        </p>
-                    </div>
-                    <div class="card-back">
-                        <h5>Fact 1</h5> 
-                        <p class="card-text"> 
-                            Some quick example text to build on the  
-                            card title and make up the bulk of the  
-                            card's content. 
-                        </p> 
-                        <a href="#" class="btn btn-outline-primary btn-sm"> 
-                            Learn More 
-                        </a> 
-                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div>
-            </div> 
-        </div>
-        <div class="col-sm-4"> 
-            <div class="card">  
-                <div class="my-card-body">
-                    <div class="card-front"> 
-                        <h5>Fact 2</h5> 
-                        <p class="card-text"> 
-                            Some quick example text to build on the  
-                            card title and make up the bulk of the  
-                            card's content. 
-                        </p>
-                    </div>
-                    <div class="card-back">
-                        <h5>Fact 2</h5> 
-                        <p class="card-text"> 
-                            Some quick example text to build on the  
-                            card title and make up the bulk of the  
-                            card's content. 
-                        </p> 
-                        <a href="#" class="btn btn-outline-primary btn-sm"> 
-                            Learn More 
-                        </a> 
-                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div>
-            </div> 
-        </div>
-        <div class="col-sm-4"> 
-            <div class="card">  
-                <div class="my-card-body">
-                    <div class="card-front"> 
-                        <h5>Fact 3</h5> 
-                        <p class="card-text"> 
-                            Some quick example text to build on the  
-                            card title and make up the bulk of the  
-                            card's content. 
-                        </p>
-                    </div>
-                    <div class="card-back">
-                        <h5>Fact 3</h5> 
-                        <p class="card-text"> 
-                            Some quick example text to build on the  
-                            card title and make up the bulk of the  
-                            card's content. 
-                        </p> 
-                        <a href="#" class="btn btn-outline-primary btn-sm"> 
-                            Learn More 
-                        </a> 
-                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div>
-            </div> 
-        </div>
+        <div class="col-sm-3 col-md-2 col-lg-2 col-xl-1">
+        <nav class="navbar navbar-light navbar-expand-sm px-0 flex-row flex-nowrap">
+            <div class="sidebar-header">
+                <h3>Weather Bees</h3>
+                <img class="image-dimensions" src="/static/images/mr_weatherbee.png" alt="Mr.Weatherbee Himself">
+                <ul class="list-unstyled-components" class="link-fonts" class="nav flex-sm-column flex-row">
+                    <p>Ask Questions <br> Find Answers</p>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
+        <div class="col-sm-2 offset-sm-1"> 
+            <div class="card">  
+                <div class="my-card-body">
+                    <div class="card-front"> 
+                        <h5>Fact 1</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p>
+                    </div>
+                    <div class="card-back">
+                        <h5>Fact 1</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p> 
+                        <a href="#" class="btn btn-outline-primary btn-sm"> 
+                            Learn More 
+                        </a> 
+                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
+                            <i class="far fa-heart"></i></a> 
+                    </div> 
+                </div>
+            </div> 
+        </div>
+        <div class="col-sm-2"> 
+            <div class="card">  
+                <div class="my-card-body">
+                    <div class="card-front"> 
+                        <h5>Fact 2</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p>
+                    </div>
+                    <div class="card-back">
+                        <h5>Fact 2</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p> 
+                        <a href="#" class="btn btn-outline-primary btn-sm"> 
+                            Learn More 
+                        </a> 
+                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
+                            <i class="far fa-heart"></i></a> 
+                    </div> 
+                </div>
+            </div> 
+        </div>
+        <div class="col-sm-2"> 
+            <div class="card">  
+                <div class="my-card-body">
+                    <div class="card-front"> 
+                        <h5>Fact 3</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p>
+                    </div>
+                    <div class="card-back">
+                        <h5>Fact 3</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p> 
+                        <a href="#" class="btn btn-outline-primary btn-sm"> 
+                            Learn More 
+                        </a> 
+                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
+                            <i class="far fa-heart"></i></a> 
+                    </div> 
+                </div>
+            </div> 
+        </div>
+        <div class="col-sm-2"> 
+            <div class="card">  
+                <div class="my-card-body">
+                    <div class="card-front"> 
+                        <h5>Fact 4</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p>
+                    </div>
+                    <div class="card-back">
+                        <h5>Fact 4</h5> 
+                        <p class="card-text"> 
+                            Some quick example text to build on the  
+                            card title and make up the bulk of the  
+                            card's content. 
+                        </p> 
+                        <a href="#" class="btn btn-outline-primary btn-sm"> 
+                            Learn More 
+                        </a> 
+                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
+                            <i class="far fa-heart"></i></a> 
+                    </div> 
+                </div>
+            </div> 
+        </div>
+    </div> 
 </body>
 </html>
