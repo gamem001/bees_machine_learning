@@ -9,7 +9,7 @@
 }
 
 .list-unstyled-components {
-    text-align: center;
+    text-align: left;
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 20px;
 }
@@ -59,9 +59,9 @@ a {
     color: black !important;
 }
 
-.dropdown-toggle:hover {
+.fa-fan:hover {
     transition: 0.70s;
-    transform: rotate(180deg);
+    transform: rotate(360deg);
 }
 
 .dropdown-toggle::after {
