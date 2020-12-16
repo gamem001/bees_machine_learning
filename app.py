@@ -1,18 +1,25 @@
 import flask 
 from flask import Flask, jsonify, render_template
-from flask_cors import cross_origin 
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+import numpy as np
+import pandas as pd
 
-# Setup Flask
-# Create an app, pass to __name__
+engine = create_engine("sqlite:///the_hive.db")
+session = Session(engine)
+
 app = Flask(__name__)
 
+decline_data = pd.read_sql('SELECT * FROM decline', con=engine)
+
+
 @app.route("/", methods=['GET'])
-@cross_origin()
 def homepage():
     return render_template('index.html')
 
 @app.route("/home", methods=['GET'])
-@cross_origin()
 def welcome():
     return(
         f"The Hive<br/>"
@@ -26,44 +33,40 @@ def welcome():
 )
 
 @app.route("/api/v1.0/col", methods=['GET'])
-@cross_origin()
 def colonies():
+    return
     
-
 
 @app.route("/api/v1.0/commo", methods=['GET'])
-@cross_origin()
 def commodities():
-    
-
-
+    return
 
 @app.route("/api/v1.0/honey", methods=['GET'])
-@cross_origin()
 def honey():
+    return
     
 
 
 
 @app.route("/api/v1.0/mrkt", methods=['GET'])
-@cross_origin()
 def mrkt():
+    return
     
 
 
 @app.route("/api/v1.0/temp", methods=['GET'])
-@cross_origin()
 def temp():
     return
 
 
 @app.route("/api/v1.0/decline", methods=['GET'])
-@cross_origin()
-def temp():
-    return
+def decline():
+    
+    decline_dict = decline_data.to_dict('records')
 
-
-
+    return jsonify(decline_dict)
+    
+    session.close()
 
 if __name__ == "__main__":
     app.run(debug=True)
