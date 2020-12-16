@@ -1,18 +1,17 @@
-import flask 
-from flask import Flask, jsonify, render_template
+import flask
+import numpy as np
+import pandas as pd
 import sqlalchemy
+from flask import Flask, jsonify, render_template
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-import numpy as np
-import pandas as pd
+
 
 engine = create_engine("sqlite:///the_hive.db")
 session = Session(engine)
 
 app = Flask(__name__)
-
-decline_data = pd.read_sql('SELECT * FROM decline', con=engine)
 
 
 @app.route("/", methods=['GET'])
@@ -61,6 +60,7 @@ def temp():
 
 @app.route("/api/v1.0/decline", methods=['GET'])
 def decline():
+    decline_data = pd.read_sql('SELECT * FROM decline', con=engine)
     
     decline_dict = decline_data.to_dict('records')
 
