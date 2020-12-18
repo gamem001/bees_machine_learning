@@ -79,6 +79,19 @@ li a:hover {
   z-index: 1;
 }
 
+.stretch {
+  height: 100vh;
+}
+
+.ml-dimensions {
+  height: 100% !important;
+  width: auto;
+}
+
+fieldset {
+  padding: 20px !important;
+}
+
 /* Flip Card Graphics */
 .card {
     background-color: transparent;

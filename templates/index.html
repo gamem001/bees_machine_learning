@@ -65,7 +65,7 @@
             </div>
         </nav>
     </div>
-        <div class="col-sm-10 background-image">
+        <div class="col-sm-10 stretch background-image">
             <div class="row top-margins">
                 <div class="col-sm-3"> 
                     <div class="card">  
@@ -177,26 +177,39 @@
                 </div>
             </div>
                 <div class="row mt-2"> 
-                    <div class="col-8">
-                        <div class="card">
-                            <div class="line-plot-card">
-                                            
+                    <div class="col-6">
+                        <div class="card ml-dimensions">
+                            <div class="ml-card">
+                                <form action="{{ url_for('main') }}" method="POST">
+                                    <fieldset>
+                                        <legend>Input values:</legend>
+                                        <br> Deadout:
+                                        <input name="Deadout" type="number" required>
+                                        <br>
+                                        <br> Pesticides:
+                                        <input name="pesticides" type="number" required>
+                                        <br>
+                                        <br> Temperature:
+                                        <input name="temperature" type="number" required>
+                                        <br>
+                                        <br> Total Colonies:
+                                        <input name="total colonies" type="number" required>
+                                        <br>
+                                        <br> Colony Collapse Syndrome:
+                                        <input name="colony collapse syndrome" type="number" required>
+                                        <br>
+                                        <br>
+                                        <input type="submit">
+                                    </fieldset>
+                                </form>         
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="card">
+                    <div class="col-6">
+                        <div class="card ml-dimensions">
                             <div class="line-plot-card">
                                             
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-2"> 
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="chart">
-                                            
+                            </div>     
                             </div>
                         </div>
                     </div>
