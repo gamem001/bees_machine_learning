@@ -33,13 +33,7 @@ def welcome():
 
 @app.route("/api/v1.0/col", methods=['GET'])
 def colonies():
-    colony_data = pd.read_sql('SELECT * FROM colony', con=engine)
-    
-    colony_dict = colony_data.to_dict('records')
-
-    return jsonify(colony_dict)
-    
-    session.close()
+    return
     
 
 @app.route("/api/v1.0/commo", methods=['GET'])
@@ -48,13 +42,7 @@ def commodities():
 
 @app.route("/api/v1.0/honey", methods=['GET'])
 def honey():
-    honey_data = pd.read_sql('SELECT * FROM honey_prod', con=engine)
-    
-    honey_dict = honey_data.to_dict('records')
-
-    return jsonify(honey_dict)
-    
-    session.close()
+    return
     
 
 
@@ -72,7 +60,7 @@ def temp():
 
 @app.route("/api/v1.0/decline", methods=['GET'])
 def decline():
-    decline_data = pd.read_sql('SELECT * FROM decline WHERE year = 2019', con=engine)
+    decline_data = pd.read_sql('SELECT * FROM decline', con=engine)
     
     decline_dict = decline_data.to_dict('records')
 
