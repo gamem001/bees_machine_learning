@@ -1,6 +1,6 @@
 var margin = {top: 30, right: 30, bottom: 70, left: 60},
-		width = 460 - margin.left - margin.right,
-		height = 400 - margin.top - margin.bottom;
+		width = 860 - margin.left - margin.right,
+		height = 800 - margin.top - margin.bottom;
 	
 	// append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -31,7 +31,7 @@ const declineUrl = '/api/v1.0/decline'
 async function getData(selectedVar) {
     const response = await fetch(declineUrl);
     const data = await response.json();
-    // console.log(data);
+    //   console.log(data);
 
 
     // x axis
@@ -48,32 +48,32 @@ async function getData(selectedVar) {
         .data(data)
     // update lines
     j
-        .enter()
-        .append("line")
-        .attr("class", "myLine")
-        .merge(j)
-        .transition()
-        .duration(1000)
-        .attr("x1", function(d) { console.log(d.deadout) ; return (d.deadout); })
-        .attr("x2", function(d) { return x(d.deadout); })
-        .attr("y1", y(0))
-        .attr("y2", function(d) { return y(d[selectedVar]); })
-        .attr("stroke", "grey")
+      .enter()
+      .append("line")
+      .attr("class", "myLine")
+      .merge(j)
+      .transition()
+      .duration(1000)
+      .attr("x1", function(d) { console.log(d.deadout) ; return (d.deadout); })
+      .attr("x2", function(d) { return x(d.state); })
+      .attr("y1", y(0))
+      .attr("y2", function(d) { return y(d[selectedVar]); })
+      .attr("stroke", "grey")
 
     // variable u: map data to existing circle
     var u = svg.selectAll("circle")
         .data(data)
     // update bars
     u
-        .enter()
-        .append("circle")
-        .merge(u)
-        .transition()
-        .duration(1000)
-        .attr("cx", function(d) { return x(d.state)})
-        .attr("cy", function(d) { return y(d[selectedVar]); })
-        .attr("r", 8)
-        .attr("fill", "#69b3a2");
-}
+      .enter()
+      .append("circle")
+      .merge(u)
+      .transition()
+      .duration(1000)
+      .attr("cx", function(d) { return x(d.state)})
+      .attr("cy", function(d) { return y(d[selectedVar]); })
+      .attr("r", 8)
+      .attr("fill", "#69b3a2");
+};
 
-getData('deadout')
+getData('deadout');
