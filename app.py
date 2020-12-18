@@ -60,7 +60,7 @@ def temp():
 
 @app.route("/api/v1.0/decline", methods=['GET'])
 def decline():
-    decline_data = pd.read_sql('SELECT * FROM decline', con=engine)
+    decline_data = pd.read_sql('SELECT * FROM decline WHERE year = 2019', con=engine)
     
     decline_dict = decline_data.to_dict('records')
 
