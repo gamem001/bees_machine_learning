@@ -24,7 +24,7 @@
 }
 
 .background-image {
-  background-image: repeating-linear-gradient(yellow, orange, brown);
+  background-color: grey;
 }
 
 /* line card */
