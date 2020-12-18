@@ -11,7 +11,7 @@
 .list-unstyled-components {
     text-align: left;
     font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 20px;
+    font-size: auto;
 }
 
 .container-fluid {
@@ -24,12 +24,12 @@
 }
 
 .background-image {
-  background-color: grey;
+  background-image: url(../images/boards.jpg);
 }
 
 /* line card */
 .line-card {
-    background-color: transparent;
+    background-image: transparent;
     width: 300px;
     height: 200px;
     border: 1px solid #f1f1f1;
@@ -56,8 +56,8 @@ a {
     color: black !important;
 }
 
-li a {
-    color: black;
+li a:hover {
+    background-color: yellow;
     text-decoration: none !important;
 }
 
