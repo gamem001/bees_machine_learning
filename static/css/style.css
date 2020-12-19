@@ -88,6 +88,16 @@ li a:hover {
   width: auto;
 }
 
+.bee-data {
+  background-image: url(../images/honeycomb_tech.jpg);
+  background-position: 100%;
+}
+
+.plot-card {
+  background-image: url(../images/bee_colonies_chart.jpg);
+  background-size: cover;
+}
+
 fieldset {
   padding: 20px !important;
 }
