@@ -113,7 +113,7 @@ def machinelearning():
         df = Predict(form)
         # session['data'] = df.to_json()
 
-        return render_template('honey.html')
+        return render_template('ml_index.html')
     else:
         return render_template('index.html', form = form)
 
@@ -134,34 +134,12 @@ def Predict(honey):
         'extreme_temp_days': [temp_val_df]
     })
 
-    X = selected_features[['deadout', 'cc_syn', 'pesticides', 'count_colonies', 'extreme_temp_days']]
-    y = selected_features["lbs_of_honey"]
-
-    from sklearn.model_selection import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=5)
-
-    from sklearn.preprocessing import StandardScaler
-    X_scaler = StandardScaler().fit(X_train)
-
-    X_train_scaled = X_scaler.transform(X_train)
-    X_test_scaled = X_scaler.transform(X_test)
-
-    hive = LinearRegression()
-    hive.fit(X, y)
-
-    from sklearn.metrics import mean_squared_error, r2_score
+    predict_df_scaled = X_scaler.transform(honey_predict_df)
 
     ## metrics are calculated on what's being predicted for the training data
-    predicted = hive.predict(X_train_scaled)
+    predicted = hive.predict(predict_df_scaled)
 
-    ## score the prediction
-    mse = mean_squared_error(y_train, predicted)
-    r2 = r2_score(y_train, predicted)
-
-    print(f'Mean Squared Error MSE: {mse}')
-    print(f'R2 Value: {r2}')
-    print(f'Pounds of Honey Predicted: ')
-    # return results
+    return render_template('index.html', results=predicted)
 
 if __name__ == "__main__":
     app.run(debug=True)
