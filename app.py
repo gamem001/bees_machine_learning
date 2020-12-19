@@ -9,6 +9,12 @@ from wtforms.validators import DataRequired
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from sklearn.datasets import make_regression
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+import numpy as np
+import plotly as plt
+import plotly.express as px
 
 class PredictorForm(FlaskForm):
     deadout = IntegerField('Deadout', validators=[DataRequired()])
@@ -19,7 +25,7 @@ class PredictorForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-# model = joblib.load('melissa/final_model.sav')
+hive = joblib.load('melissa/final_model.sav')
 
 engine = create_engine("sqlite:///the_hive.db")
 session = Session(engine)
@@ -127,7 +133,34 @@ def Predict(honey):
         'count_colonies': [colony_val_df],
         'extreme_temp_days': [temp_val_df]
     })
-    # incomes machince learning...sorry
+
+    X = selected_features[['deadout', 'cc_syn', 'pesticides', 'count_colonies', 'extreme_temp_days']]
+    y = selected_features["lbs_of_honey"]
+
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=5)
+
+    from sklearn.preprocessing import StandardScaler
+    X_scaler = StandardScaler().fit(X_train)
+
+    X_train_scaled = X_scaler.transform(X_train)
+    X_test_scaled = X_scaler.transform(X_test)
+
+    hive = LinearRegression()
+    hive.fit(X, y)
+
+    from sklearn.metrics import mean_squared_error, r2_score
+
+    ## metrics are calculated on what's being predicted for the training data
+    predicted = hive.predict(X_train_scaled)
+
+    ## score the prediction
+    mse = mean_squared_error(y_train, predicted)
+    r2 = r2_score(y_train, predicted)
+
+    print(f'Mean Squared Error MSE: {mse}')
+    print(f'R2 Value: {r2}')
+    print(f'Pounds of Honey Predicted: ')
     # return results
 
 if __name__ == "__main__":
