@@ -20,8 +20,8 @@ class PredictorForm(FlaskForm):
     deadout = IntegerField('Deadout', validators=[DataRequired()])
     cc_syn = IntegerField('Colony Collapse', validators=[DataRequired()])
     pest = FloatField('Pesticides', validators=[DataRequired()])
-    temps = FloatField('Temps', validators=[DataRequired()])
-    num_colonies = IntegerField('Num of Colonies', validators=[DataRequired()])
+    temps = FloatField('Inclimate Days', validators=[DataRequired()])
+    num_colonies = IntegerField('Total Colonies', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
