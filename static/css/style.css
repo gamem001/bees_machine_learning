@@ -127,16 +127,14 @@ fieldset {
   /* Style the front side (fallback if image is missing) */
   .card-front {
     background-color: white;
-    color: black;
+    color: gold;
     text-align: center;
-    /* width: 300px;
-    height: 200px; */
   }
   
   /* Style the back side */
   .card-back {
     background-color: white;
-    color: black;
+    color: gold;
     transform: rotateY(180deg);
     text-align: center;
     /* width: 300px;
