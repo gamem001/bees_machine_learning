@@ -11,7 +11,7 @@
 .list-unstyled-components {
     text-align: left;
     font-family: "Lucida Console", "Courier New", monospace;
-    font-size: auto;
+    font-size: 20px;
 }
 
 .container-fluid {
@@ -24,12 +24,12 @@
 }
 
 .background-image {
-  background-image: url(../images/boards.jpg);
+  background-color: grey;
 }
 
 /* line card */
 .line-card {
-    background-image: transparent;
+    background-color: transparent;
     width: 300px;
     height: 200px;
     border: 1px solid #f1f1f1;
@@ -56,8 +56,8 @@ a {
     color: black !important;
 }
 
-li a:hover {
-    background-color: yellow;
+li a {
+    color: black;
     text-decoration: none !important;
 }
 
@@ -77,29 +77,6 @@ li a:hover {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-}
-
-.stretch {
-  height: 100vh;
-}
-
-.ml-dimensions {
-  height: 100% !important;
-  width: auto;
-}
-
-.bee-data {
-  background-image: url(../images/honeycomb_tech.jpg);
-  background-position: 100%;
-}
-
-.plot-card {
-  background-image: url(../images/bee_colonies_chart.jpg);
-  background-size: cover;
-}
-
-fieldset {
-  padding: 20px !important;
 }
 
 /* Flip Card Graphics */
@@ -137,14 +114,16 @@ fieldset {
   /* Style the front side (fallback if image is missing) */
   .card-front {
     background-color: white;
-    color: gold;
+    color: black;
     text-align: center;
+    /* width: 300px;
+    height: 200px; */
   }
   
   /* Style the back side */
   .card-back {
     background-color: white;
-    color: gold;
+    color: black;
     transform: rotateY(180deg);
     text-align: center;
     /* width: 300px;
