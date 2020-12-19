@@ -172,28 +172,30 @@
                     <div class="col-6">
                         <div class="card ml-dimensions bee-data">
                             <div class="ml-card">
-                                <form action="{{ url_for('main') }}" method="POST">
-                                    <fieldset>
-                                        <legend>Input values:</legend>
-                                        <br> Deadout:
-                                        <input id="Deadout" type="number" required>
+                                <form action="/" method="post">
+                                    <fieldset class='form-field'>
+                                        <!-- <legend>Input values:</legend> -->
+                                        {{ form.deadout.label }}
+                                        {{ form.deadout }}
                                         <br>
-                                        <br> Pesticides:
-                                        <input id="pesticides" type="number" required>
+                                        {{ form.cc_syn.label }}
+                                        {{ form.cc_syn }}
                                         <br>
-                                        <br> Temperature:
-                                        <input placeholder="extreme temp days/yr" id="temperature" type="number" required>
+                                        {{ form.pest.label }}
+                                        {{ form.pest }}
                                         <br>
-                                        <br> Total Colonies:
-                                        <input id="total colonies" type="number" required>
+                                        {{ form.temps.label }}
+                                        {{ form.temps }}
                                         <br>
-                                        <br> Colony Collapse Syndrome:
-                                        <input id="colony collapse syndrome" type="number" required>
-                                        <br>
-                                        <br>
-                                        <input type="submit">
+                                        {{ form.num_colonies.label }}
+                                        {{ form.num_colonies }}
+                                        
+                                    
+                                        
                                     </fieldset>
-                                </form>         
+                                    {{ form.submit }} {{ predicted }}
+                                </form>
+                                <!-- <div>  </div>          -->
                             </div>
                         </div>
                     </div>

@@ -25,17 +25,32 @@ class PredictorForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-hive = joblib.load('melissa/final_model.sav')
+model_dict = joblib.load('melissa/final_model.sav')
 
 engine = create_engine("sqlite:///the_hive.db")
 session = Session(engine)
 
 app = Flask(__name__)
 
-# app.config['SECRET_KEY'] = 'C2HWGVoMGfNTBsrYQg8EcMrdTimkZfAb'
+app.config['SECRET_KEY'] = 'C2HWGVoMGfNTBsrYQg8EcMrdTimkZfAb'
 @app.route("/", methods=['GET','POST'])
 def homepage():
-    return render_template('index.html')
+    form = PredictorForm()
+
+    if request.method == 'POST':
+        deadout_val = form.deadout.data
+        ccsyn_val = form.cc_syn.data
+        pest_val = form.pest.data
+        temp_val = form.temps.data
+        colony_val = form.num_colonies.data
+
+        predicted_value = Predict(form)
+
+    
+        return render_template('index.html', form = form, predicted=predicted_value)
+    else:
+        return render_template('index.html', form = form)
+    # return render_template('index.html')
 
 @app.route("/home", methods=['GET'])
 def welcome():
@@ -74,17 +89,6 @@ def honey():
     return jsonify(honey_dict)
     
     session.close()
-    
-# @app.route("/api/v1.0/mrkt", methods=['GET'])
-# def mrkt():
-#     return
-    
-
-
-# @app.route("/api/v1.0/temp", methods=['GET'])
-# def temp():
-#     return
-
 
 @app.route("/api/v1.0/decline", methods=['GET'])
 def decline():
@@ -97,35 +101,19 @@ def decline():
     session.close()
 
 
-
-@app.route("/machine", methods=['GET', 'POST'])
-def machinelearning():
-
-    form = PredictorForm()
-
-    if request.method == 'POST':
-        deadout_val = form.deadout.data
-        ccsyn_val = form.cc_syn.data
-        pest_val = form.pest.data
-        temp_val = form.temps.data
-        colony_val = form.num_colonies.data
-
-        df = Predict(form)
-        # session['data'] = df.to_json()
-
-        return render_template('ml_index.html')
-    else:
-        return render_template('index.html', form = form)
-
 @app.route("/data", methods=['GET', 'POST'])
 
 def Predict(honey):
-    deadout_val_df = honey.deadout_val.data
-    ccsyn_val_df = honey.ccsyn_val.data
-    pest_val_df = honey.pest_val.data
-    temp_val_df = honey.temp_val.data
-    colony_val_df = honey.colony_val.data
+    deadout_val_df = honey.deadout.data
+    ccsyn_val_df = honey.cc_syn.data
+    pest_val_df = honey.pest.data
+    temp_val_df = honey.temps.data
+    colony_val_df = honey.num_colonies.data
 
+    # print(deadout_val_df)
+    # print(ccsyn_val_df)
+
+   
     honey_predict_df = pd.DataFrame({
         'deadout': [deadout_val_df],
         'cc_syn': [ccsyn_val_df],
@@ -134,12 +122,15 @@ def Predict(honey):
         'extreme_temp_days': [temp_val_df]
     })
 
-    predict_df_scaled = X_scaler.transform(honey_predict_df)
+    print(honey_predict_df)
+    hive = model_dict['model']
+    X_Scaler = model_dict['scaler']
+    predict_df_scaled = X_Scaler.transform(honey_predict_df)
 
     ## metrics are calculated on what's being predicted for the training data
     predicted = hive.predict(predict_df_scaled)
-
-    return render_template('index.html', results=predicted)
+    # print(predicted)
+    return predicted
 
 if __name__ == "__main__":
     app.run(debug=True)
