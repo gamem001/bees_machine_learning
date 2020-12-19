@@ -84,8 +84,13 @@ li a:hover {
 }
 
 .ml-dimensions {
-  height: 100% !important;
+  height: 400px !important;
   width: auto;
+  text-align: center;
+}
+
+.form-field {
+  margin: 3rem;
 }
 
 .bee-data {
