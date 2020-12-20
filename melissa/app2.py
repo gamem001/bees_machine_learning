@@ -67,14 +67,12 @@ def colonies():
     
 
 @app.route("/api/v1.0/commo", methods=['GET'])
-def commodities():
-    commodities = pd.read_sql('SELECT * FROM commodities', con=engine)
+def yieldd():
+    crops = pd.read_sql('SELECT * FROM colony_commodities', con=engine)
 
-    colony = pd.read_sql('SELECT * FROM colony', con=engine)
+    colony_dict = crops.to_dict('records')
 
-    colony_commodity = pd.merge(commodities, colony, on = ['year', 'state'], how = 'left')
-
-    return jsonify(colony_commodity)
+    return jsonify(colony_dict)
 
     session.close()
 

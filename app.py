@@ -67,8 +67,14 @@ def colonies():
     
 
 @app.route("/api/v1.0/commo", methods=['GET'])
-def commodities():
-    return
+def food():
+    crops = pd.read_sql('SELECT * FROM colony_commodities', con=engine)
+
+    colony_dict = crops.to_dict('records')
+    
+    return jsonify(colony_dict)
+    
+    session.close()
 
 @app.route("/api/v1.0/honey", methods=['GET'])
 def honey():
