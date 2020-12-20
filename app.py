@@ -96,6 +96,10 @@ def decline():
     
     session.close()
 
+@app.route("/charts", methods=['GET'])
+
+def gallery():
+    return render_template("charts.html")
 
 @app.route("/data", methods=['GET', 'POST'])
 
