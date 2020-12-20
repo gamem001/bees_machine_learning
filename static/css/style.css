@@ -79,24 +79,22 @@ li a:hover {
 }
 
 .ml-dimensions {
-  height: 100% !important;
-  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
   text-align: center;
   text-decoration: solid;
-  font-size: x-large;
 }
 
-.form-field {
-  margin: 3rem;
+.second-row-top-margin {
+  margin-top: 3rem;
 }
 
-.bee-data {
+/* .bee-data {
   background-image: url(../images/honeycomb_tech.jpg);
   background-position: 100%;
-}
+} */
 
 .plot-card {
-  background-image: url(../images/bee_colonies_chart.jpg);
   background-size: cover;
   height: 100%;
   width: 100%
@@ -113,6 +111,7 @@ fieldset {
     border: 1px solid #f1f1f1;
     padding: 0 !important;
     width: 100%;
+    max-width: 350px !important;
   }
   
   /* This container is needed to position the front and back side */
@@ -136,6 +135,7 @@ fieldset {
     height: 200px; */
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    -webkit-text-stroke: .1px black
   }
   
   /* Style the front side (fallback if image is missing) */
@@ -154,3 +154,4 @@ fieldset {
     /* width: 300px;
     height: 200px; */
   }
+
