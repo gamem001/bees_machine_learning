@@ -1,3 +1,5 @@
+/* Sidebar CSS */
+
 .sidebar-styles {
     background-color: white;
     height: 100vh;
@@ -28,13 +30,6 @@
 }
 
 /* line card */
-.line-card {
-    background-image: transparent;
-    width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-}
-
 .image-dimensions {
     width: 100%;
     height: 100%;
@@ -84,9 +79,11 @@ li a:hover {
 }
 
 .ml-dimensions {
-  height: 400px !important;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
   text-align: center;
+  text-decoration: solid;
+  font-size: x-large;
 }
 
 .form-field {
@@ -101,10 +98,12 @@ li a:hover {
 .plot-card {
   background-image: url(../images/bee_colonies_chart.jpg);
   background-size: cover;
+  height: 100%;
+  width: 100%
 }
 
 fieldset {
-  padding: 20px !important;
+  padding: 6rem !important;
 }
 
 /* Flip Card Graphics */
