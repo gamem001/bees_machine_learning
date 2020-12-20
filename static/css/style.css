@@ -85,7 +85,7 @@ li a:hover {
 
 .ml-dimensions {
   height: 400px !important;
-  width: auto;
+  width: 100%;
   text-align: center;
 }
 
