@@ -27,6 +27,8 @@
 
 .background-image {
   background-image: url(../images/boards.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
 }
 
 /* line card */
@@ -83,6 +85,7 @@ li a:hover {
   max-width: 100% !important;
   text-align: center;
   text-decoration: solid;
+  min-height: 594px;
 }
 
 .second-row-top-margin {
@@ -101,7 +104,18 @@ li a:hover {
 }
 
 fieldset {
-  padding: 6rem !important;
+  width: 400px !important;
+  margin:auto !important;
+  padding-top: 5em !important;
+  padding-bottom: 5em !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+  border-color: black !important;
+  border-image: initial !important;
+}
+
+form {
+  padding: 7em;
 }
 
 /* Flip Card Graphics */
@@ -155,3 +169,6 @@ fieldset {
     height: 200px; */
   }
 
+div label{
+  text-align: right  !important;
+}
