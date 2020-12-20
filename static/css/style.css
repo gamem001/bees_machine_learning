@@ -13,7 +13,7 @@
 .list-unstyled-components {
     text-align: left;
     font-family: "Lucida Console", "Courier New", monospace;
-    font-size: auto;
+    font-size: medium;
 }
 
 .container-fluid {
@@ -104,14 +104,21 @@ li a:hover {
 }
 
 fieldset {
-  width: 400px !important;
-  margin:auto !important;
+  width: 100% !important;
+  margin:5em !important;
   padding-top: 5em !important;
   padding-bottom: 5em !important;
   border-width: 2px !important;
   border-style: solid !important;
   border-color: black !important;
   border-image: initial !important;
+
+  margin-inline-start: 2px !important;
+  margin-inline-end: 2px !important;
+  padding-block-start: 1em !important;
+  padding-inline-start: 0.75em !important;
+  padding-inline-end: 0.75em !important;
+  padding-block-end: 0.625em !important;
 }
 
 form {
