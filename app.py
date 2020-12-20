@@ -116,5 +116,11 @@ def Predict(honey):
 
     return predicted
 
+
+@app.route("/andrew", methods=['GET', 'POST'])
+def test():
+    return render_template('test.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
