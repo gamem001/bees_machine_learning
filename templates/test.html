@@ -51,8 +51,17 @@
   
       // X axis
       x.domain(data.map(function(d) { return d.state; }))
-      xAxis.transition().duration(1000).call(d3.axisBottom(x))
-  
+      xAxis
+        .transition()
+        .duration(1000)
+        .call(d3.axisBottom(x))
+      .selectAll('text')
+        .attr('y',0)
+        .attr('x',12)
+        .attr('dy','.35em')
+        .attr('transform', 'rotate(90)')
+        .style('text-anchor','start')
+
       // Add Y axis
       y.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
       yAxis
@@ -75,7 +84,7 @@
           .attr("x2", function(d) { return x(d.state); })
           .attr("y1", y(0))
           .attr("y2", function(d) { return y(d[selectedVar]); })
-          .attr("stroke", "grey")
+          .attr("stroke", "orange")
   
   
       // variable u: map data to existing circle
