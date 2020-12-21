@@ -1,6 +1,6 @@
 
 let dropItems = ['Bee Colonies','Pounds of Honey']
-let whatever = {'Bee Colonies':'tot_homeless','Pounds of Honey':'avg_income'}
+// let whatever = {'Bee Colonies':'tot_homeless','Pounds of Honey':'avg_income'}
 
 dropItems.forEach(dropDownMenu => {
     d3.select("#selDataset")
@@ -21,79 +21,259 @@ function handleSubmit() {
     // select the value from the dropdown
     let selectedId = d3.select('#selDataset').node().value;
 
-    let selectedObj = whatever[selectedId] 
-    console.log(selectedObj);
+    //let selectedObj = whatever[selectedId] 
+    console.log(selectedId);
 
     // build your plots
-    buildMap(selectedObj);
+    buildMap(selectedId);
 };
 
 function buildMap(bee) {
-// import fish with d3 and json and set dropdown menu to names array
-    const url = "/api/v1.0/data_2016";
-    d3.json(url).then(function(response) {
-        let allData = response;
-        let dataByYear = {'state_name':[], 
-                        'state_abbrev':[],
-                        'rent_data':[],
-                        'tot_homeless':[],
-                        'avg_income':[],
-                        'avg_sale': []};
+    if (bee == "Pounds of Honey"){
+        const url = "/api/v1.0/honey";
+        Plotly.d3.json(url, function(err, rows){
 
-        allData.forEach(function(fish) {
-
-            dataByYear.state_name.push(fish.State);
-            dataByYear.state_abbrev.push(fish.Code);
-            dataByYear.rent_data.push(fish.avg_rent);
-            dataByYear.tot_homeless.push(fish.Total_Homeless);
-            dataByYear.avg_income.push(fish.average_incomes);
-            dataByYear.avg_sale.push(fish.avg_sale_price);
+            console.log(rows)
             
-        });  
+        function filter_and_unpack(rows, key, year) {
+        return rows.filter(row => row['year'] == year).map(row => row[key])
+        }
 
-        //console.log(state_abbrev);
-        //console.log(rent_data);
-        console.log(dataByYear['rent_data']);
-        console.log(dataByYear[bee]);
+        var frames = []
+        var slider_steps = []
 
-        
+        var n = 32;
+        var num = 1987;
+        for (var i = 0; i <= n; i++) {
+            var z = filter_and_unpack(rows, 'lbs_of_honey', num)
+            var locations = filter_and_unpack(rows,'Code', num)
+            frames[i] = {data: [{z: z, locations: locations, text: locations}], name: num}
+            slider_steps.push ({
+                label: num.toString(),
+                method: "animate",
+                args: [[num], {
+                    mode: "immediate",
+                    transition: {duration: 300},
+                    frame: {duration: 300}
+                }
+                ]
+            })
+            num = num + 1
+        }
+
         let choroData = [{
             type: 'choropleth',
-            lobeeionmode: 'USA-states',
-            lobeeions: dataByYear['state_abbrev'],
-            z: dataByYear[bee],
-            text: dataByYear['state_name'],
-            colorscale: 'Viridis',
+            locationmode: 'USA-states',
+            locations: frames[0].data[0].locations,
+            z: frames[0].data[0].z,
+            text: frames[0].data[0].locations,
+            colorscale: 'Virdis',
             colorbar: {
-                title: '$ USD',
-                thickness: 10
-            },
+                title: 'lbs of honey',
+                thickness: 10},
             marker: {
                 line:{
                     color: 'rgb(200,200,200)',
-                    width: 1
+                    width: 1}
                 }
-            }
-        }];
+            }];
 
+            var layout = {
+                title: 'Production of Honey',
+                geo:{
+                    scope: 'usa'
+                },
+                updatemenus: [{
+                    x: 0.1,
+                    y: 0,
+                    yanchor: "top",
+                    xanchor: "right",
+                    showactive: false,
+                    direction: "left",
+                    type: "buttons",
+                    pad: {"t": 87, "r": 10},
+                    buttons: [{
+                    method: "animate",
+                    args: [null, {
+                        fromcurrent: true,
+                        transition: {
+                        duration: 200,
+                        },
+                        frame: {
+                        duration: 500
+                        }
+                    }],
+                    label: "Play"
+                    }, {
+                    method: "animate",
+                    args: [
+                        [null],
+                        {
+                        mode: "immediate",
+                        transition: {
+                            duration: 0
+                        },
+                        frame: {
+                            duration: 0
+                        }
+                        }
+                    ],
+                    label: "Pause"
+                    }]
+                }],
+                sliders: [{
+                    active: 0,
+                    steps: slider_steps,
+                    x: 0.1,
+                    len: 0.9,
+                    xanchor: "left",
+                    y: 0,
+                    yanchor: "top",
+                    pad: {t: 50, b: 10},
+                    currentvalue: {
+                    visible: true,
+                    prefix: "Year:",
+                    xanchor: "right",
+                    font: {
+                        size: 20,
+                        color: "#666"
+                    }
+                    },
+                    transition: {
+                    duration: 300,
+                    easing: "cubic-in-out"
+                    }
+                }]
 
-        var layout = {
-            title: '2016 Homeless Population',
-            geo:{
-                scope: 'usa'
-            }
-        };
+            };
 
-        Plotly.newPlot("choropleth", choroData, layout);
+                Plotly.newPlot("myDiv", choroData, layout).then(function(){
+                    Plotly.addFrames("myDiv",frames);
+                });
 
-    console.log(allData);
-    });
-};
+        });}
+        
+    else if (bee == "Bee Colonies"){
+        const url_2 = "/api/v1.0/col";
+        Plotly.d3.json(url_2, function(err, rows_2){
 
+            console.log(rows_2)
+            
+        function filter_and_unpack(rows_2, key_2, year_2) {
+        return rows_2.filter(row_2 => row_2['year'] == year_2).map(row_2 => row_2[key_2])
+        }
 
+        var frames_2 = []
+        var slider_steps_2 = []
 
+        var n_2 = 32;
+        var num_2 = 1987;
+        for (var i = 0; i <= n_2; i++) {
+            var z_2 = filter_and_unpack(rows_2, 'count_colonies', num_2)
+            var locations_2 = filter_and_unpack(rows_2,'Code', num_2)
+            frames_2[i] = {data_2: [{z_2: z_2, locations_2: locations_2, text_2: locations_2}], name_2: num_2}
+            slider_steps_2.push ({
+                label: num_2.toString(),
+                method: "animate",
+                args: [[num_2], {
+                    mode: "immediate",
+                    transition: {duration: 300},
+                    frame: {duration: 300}
+                }
+                ]
+            })
+            num_2 = num_2 + 1
+        }
 
+        let choroData_2 = [{
+            type: 'choropleth',
+            locationmode: 'USA-states',
+            locations: frames_2[0].data_2[0].locations_2,
+            z: frames_2[0].data_2[0].z_2,
+            text: frames_2[0].data_2[0].locations_2,
+            colorscale: 'solar',
+            colorbar: {
+                title: 'number of colonies',
+                thickness: 10},
+            marker: {
+                line:{
+                    color: 'rgb(200,200,200)',
+                    width: 1}
+                }
+            }];
 
+            var layout_2 = {
+                title: 'Number of Colonies per State',
+                geo:{
+                    scope: 'usa'
+                },
+                updatemenus: [{
+                    x: 0.1,
+                    y: 0,
+                    yanchor: "top",
+                    xanchor: "right",
+                    showactive: false,
+                    direction: "left",
+                    type: "buttons",
+                    pad: {"t": 87, "r": 10},
+                    buttons: [{
+                    method: "animate",
+                    args: [null, {
+                        fromcurrent: true,
+                        transition: {
+                        duration: 200,
+                        },
+                        frame: {
+                        duration: 500
+                        }
+                    }],
+                    label: "Play"
+                    }, {
+                    method: "animate",
+                    args: [
+                        [null],
+                        {
+                        mode: "immediate",
+                        transition: {
+                            duration: 0
+                        },
+                        frame: {
+                            duration: 0
+                        }
+                        }
+                    ],
+                    label: "Pause"
+                    }]
+                }],
+                sliders: [{
+                    active: 0,
+                    steps: slider_steps_2,
+                    x: 0.1,
+                    len: 0.9,
+                    xanchor: "left",
+                    y: 0,
+                    yanchor: "top",
+                    pad: {t: 50, b: 10},
+                    currentvalue: {
+                    visible: true,
+                    prefix: "Year:",
+                    xanchor: "right",
+                    font: {
+                        size: 20,
+                        color: "#666"
+                    }
+                    },
+                    transition: {
+                    duration: 300,
+                    easing: "cubic-in-out"
+                    }
+                }]
 
+            };
 
+            Plotly.newPlot("myDiv", choroData_2, layout_2).then(function(){
+                Plotly.addFrames("myDiv",frames_2);
+            });
 
+    });}
+}

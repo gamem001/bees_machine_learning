@@ -57,9 +57,21 @@ def homepage():
 
 @app.route("/api/v1.0/col", methods=['GET'])
 def colonies():
+    # read in sql tables with pandas
     colony_data = pd.read_sql('SELECT * FROM colony', con=engine)
+    state_code = pd.read_sql('SELECT * FROM states', con=engine)
+
+    # remove US TOTAL and OTHER STATES values
+    colony_data_2 = colony_data.loc[colony_data["state"] != 'US TOTAL']
+    colony_data_clean = colony_data_2.loc[colony_data_2["state"] != 'OTHER STATES']
+
+    # merge colony with states
+    colony_w_state = pd.merge(colony_data_clean, state_code, on = 'state', how = 'left')
     
-    colony_dict = colony_data.to_dict('records')
+    #sort by year descending
+    colony_w_state_sorted = colony_w_state.sort_values(by=['year'])
+
+    colony_dict = colony_w_state_sorted.to_dict('records')
 
     return jsonify(colony_dict)
     
@@ -67,24 +79,38 @@ def colonies():
     
 
 @app.route("/api/v1.0/commo", methods=['GET'])
-def food():
-    crops = pd.read_sql('SELECT * FROM colony_commodities', con=engine)
+def commodities():
+    crops = pd.read_sql('SELECT * FROM commodities', con=engine)
+    colony = pd.read_sql('SELECT * FROM colony', con=engine)
 
-    colony_dict = crops.to_dict('records')
-    
+    commodity = pd.merge(crops, colony, on = ['year', 'state'], how = 'left')
+
+    commodity.dropna(how='any', inplace=True)
+    # commodity_clean = commodity.loc[commodity["count_colonies"] == 'NaN']
+
+    colony_dict = commodity.to_dict('records')
+
     return jsonify(colony_dict)
-    
+
     session.close()
 
 @app.route("/api/v1.0/honey", methods=['GET'])
 def honey():
     honey_data = pd.read_sql('SELECT * FROM honey_prod', con=engine)
+    state_code = pd.read_sql('SELECT * FROM states', con=engine)
+
+    honey_data_2 = honey_data.loc[honey_data["state"] != 'US TOTAL']
+    honey_data_clean = honey_data_2.loc[honey_data_2["state"] != 'OTHER STATES']
     
-    honey_dict = honey_data.to_dict('records')
+    honey_w_state = pd.merge(honey_data_clean, state_code, on = 'state', how = 'left')
+    honey_w_state_sorted = honey_w_state.sort_values(by=['year'])
+
+    honey_dict = honey_w_state_sorted.to_dict('records')
 
     return jsonify(honey_dict)
     
     session.close()
+
 
 @app.route("/api/v1.0/decline", methods=['GET'])
 def decline():
@@ -96,20 +122,6 @@ def decline():
     
     session.close()
 
-@app.route("/charts", methods=['GET'])
-
-def charts():
-    return render_template("charts.html")
-
-@app.route("/visualizations", methods=['GET'])
-
-def visualizations():
-    return render_template("visualizations.html")
-
-@app.route("/ml_walkthrough", methods=['GET'])
-
-def ml_walkthrough():
-    return render_template("ml_walkthrough.html")
 
 @app.route("/data", methods=['GET', 'POST'])
 
@@ -135,6 +147,12 @@ def Predict(honey):
     predicted = hive.predict(predict_df_scaled)
 
     return predicted
+
+
+@app.route("/andrew", methods=['GET', 'POST'])
+def test():
+    return render_template('test_MR.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
