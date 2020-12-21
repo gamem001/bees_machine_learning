@@ -111,6 +111,11 @@ def visualizations():
 def ml_walkthrough():
     return render_template("ml_walkthrough.html")
 
+@app.route("/data_used", methods=['GET'])
+
+def data_used():
+    return render_template("data_used.html")
+
 @app.route("/data", methods=['GET', 'POST'])
 
 def Predict(honey):
