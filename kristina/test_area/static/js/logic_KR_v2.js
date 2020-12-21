@@ -67,7 +67,7 @@ function buildMap(bee) {
             locations: frames[0].data[0].locations,
             z: frames[0].data[0].z,
             text: frames[0].data[0].locations,
-            colorscale: 'solar',
+            colorscale: 'Virdis',
             colorbar: {
                 title: 'lbs of honey',
                 thickness: 10},
@@ -152,44 +152,45 @@ function buildMap(bee) {
                 });
 
         });}
-    else{
+        
+    else if (bee == "Bee Colonies"){
         const url_2 = "/api/v1.0/col";
-        Plotly.d3.json(url_2, function(err, rows){
+        Plotly.d3.json(url_2, function(err, rows_2){
 
-            console.log(rows)
+            console.log(rows_2)
             
-        function filter_and_unpack(rows, key, year) {
-        return rows.filter(row => row['year'] == year).map(row => row[key])
+        function filter_and_unpack(rows_2, key_2, year_2) {
+        return rows_2.filter(row_2 => row_2['year'] == year_2).map(row_2 => row_2[key_2])
         }
 
-        var frames = []
-        var slider_steps = []
+        var frames_2 = []
+        var slider_steps_2 = []
 
-        var n = 32;
-        var num = 1987;
-        for (var i = 0; i <= n; i++) {
-            var z = filter_and_unpack(rows, 'count_colonies', num)
-            var locations = filter_and_unpack(rows,'Code', num)
-            frames[i] = {data: [{z: z, locations: locations, text: locations}], name: num}
-            slider_steps.push ({
-                label: num.toString(),
+        var n_2 = 32;
+        var num_2 = 1987;
+        for (var i = 0; i <= n_2; i++) {
+            var z_2 = filter_and_unpack(rows_2, 'count_colonies', num_2)
+            var locations_2 = filter_and_unpack(rows_2,'Code', num_2)
+            frames_2[i] = {data_2: [{z_2: z_2, locations_2: locations_2, text_2: locations_2}], name_2: num_2}
+            slider_steps_2.push ({
+                label: num_2.toString(),
                 method: "animate",
-                args: [[num], {
+                args: [[num_2], {
                     mode: "immediate",
                     transition: {duration: 300},
                     frame: {duration: 300}
                 }
                 ]
             })
-            num = num + 1
+            num_2 = num_2 + 1
         }
 
-        let choroData = [{
+        let choroData_2 = [{
             type: 'choropleth',
             locationmode: 'USA-states',
-            locations: frames[0].data[0].locations,
-            z: frames[0].data[0].z,
-            text: frames[0].data[0].locations,
+            locations: frames_2[0].data_2[0].locations_2,
+            z: frames_2[0].data_2[0].z_2,
+            text: frames_2[0].data_2[0].locations_2,
             colorscale: 'solar',
             colorbar: {
                 title: 'number of colonies',
@@ -201,7 +202,7 @@ function buildMap(bee) {
                 }
             }];
 
-            var layout = {
+            var layout_2 = {
                 title: 'Number of Colonies per State',
                 geo:{
                     scope: 'usa'
@@ -246,7 +247,7 @@ function buildMap(bee) {
                 }],
                 sliders: [{
                     active: 0,
-                    steps: slider_steps,
+                    steps: slider_steps_2,
                     x: 0.1,
                     len: 0.9,
                     xanchor: "left",
@@ -270,8 +271,8 @@ function buildMap(bee) {
 
             };
 
-            Plotly.newPlot("myDiv", choroData, layout).then(function(){
-                Plotly.addFrames("myDiv",frames);
+            Plotly.newPlot("myDiv", choroData_2, layout_2).then(function(){
+                Plotly.addFrames("myDiv",frames_2);
             });
 
     });}
