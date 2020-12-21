@@ -17,7 +17,7 @@
 }
 
 .container-fluid {
-    height: 100vh;
+    height: 100vh !important;
     width: 100vh;
 }
 
@@ -25,10 +25,10 @@
     color: white;
 }
 
-.background-image {
+
+body, html {
+  height: 100%;
   background-image: url(../images/boards.jpg);
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
 }
 
 /* line card */
@@ -188,7 +188,7 @@ div label{
 .visualization-sizer {
  width: auto;
  height: auto;
- min-height: 500px;
+ min-height: 350px;
 }
 
 .vis-card {
