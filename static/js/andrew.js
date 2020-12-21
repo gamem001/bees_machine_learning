@@ -41,7 +41,7 @@ function update(selectedVar) {
     
     .selectAll('text')
       .attr('y',0)
-      .attr('x', 12)
+      .attr('x', 10)
       .attr('dy','.35em')
       .attr('transform','rotate(90)')
       .style('text-anchor','start')
@@ -65,7 +65,7 @@ function update(selectedVar) {
         .attr("x2", function(d) { return x(d.state); })
         .attr("y1", y(0))
         .attr("y2", function(d) { return y(d[selectedVar]); })
-        .attr("stroke", "orange")
+        .attr("stroke", "#010101")
 
 
     
@@ -80,8 +80,8 @@ function update(selectedVar) {
       .duration(1000)
         .attr("cx", function(d) { return x(d.state); })
         .attr("cy", function(d) { return y(d[selectedVar]); })
-        .attr("r", 8)
-        .attr("fill", "#69b3a2");
+        .attr("r", 6)
+        .attr("fill", "#FCD615");
 
 
   })
