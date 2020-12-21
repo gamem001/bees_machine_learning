@@ -11,7 +11,7 @@
 .list-unstyled-components {
     text-align: left;
     font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 20px;
+    font-size: auto;
 }
 
 .container-fluid {
@@ -24,12 +24,12 @@
 }
 
 .background-image {
-  background-color: grey;
+  background-image: url(../images/boards.jpg);
 }
 
 /* line card */
 .line-card {
-    background-color: transparent;
+    background-image: transparent;
     width: 300px;
     height: 200px;
     border: 1px solid #f1f1f1;
@@ -56,8 +56,8 @@ a {
     color: black !important;
 }
 
-li a {
-    color: black;
+li a:hover {
+    background-color: yellow;
     text-decoration: none !important;
 }
 
@@ -77,6 +77,34 @@ li a {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+
+.stretch {
+  height: 100vh;
+}
+
+.ml-dimensions {
+  height: 400px !important;
+  width: auto;
+  text-align: center;
+}
+
+.form-field {
+  margin: 3rem;
+}
+
+.bee-data {
+  background-image: url(../images/honeycomb_tech.jpg);
+  background-position: 100%;
+}
+
+.plot-card {
+  background-image: url(../images/bee_colonies_chart.jpg);
+  background-size: cover;
+}
+
+fieldset {
+  padding: 20px !important;
 }
 
 /* Flip Card Graphics */
@@ -114,16 +142,14 @@ li a {
   /* Style the front side (fallback if image is missing) */
   .card-front {
     background-color: white;
-    color: black;
+    color: gold;
     text-align: center;
-    /* width: 300px;
-    height: 200px; */
   }
   
   /* Style the back side */
   .card-back {
     background-color: white;
-    color: black;
+    color: gold;
     transform: rotateY(180deg);
     text-align: center;
     /* width: 300px;
