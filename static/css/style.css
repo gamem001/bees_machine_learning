@@ -179,3 +179,20 @@ form {
 div label{
   text-align: right  !important;
 }
+
+/* Charts Page */
+
+
+/* Visualizations Page */
+
+.visualization-sizer {
+ width: auto;
+ height: auto;
+ min-height: 500px;
+}
+
+.vis-card {
+  background-color: white;
+  border: 1px solid #f1f1f1;
+  padding: 0 !important;
+}

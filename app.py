@@ -98,8 +98,18 @@ def decline():
 
 @app.route("/charts", methods=['GET'])
 
-def gallery():
+def charts():
     return render_template("charts.html")
+
+@app.route("/visualizations", methods=['GET'])
+
+def visualizations():
+    return render_template("visualizations.html")
+
+@app.route("/ml_walkthrough", methods=['GET'])
+
+def ml_walkthrough():
+    return render_template("ml_walkthrough.html")
 
 @app.route("/data", methods=['GET', 'POST'])
 
