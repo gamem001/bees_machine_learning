@@ -1,0 +1,157 @@
+.sidebar-styles {
+    background-color: white;
+    height: 100vh;
+}
+
+.sidebar-header {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.list-unstyled-components {
+    text-align: left;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: auto;
+}
+
+.container-fluid {
+    height: 100vh;
+    width: 100vh;
+}
+
+.link-fonts {
+    color: white;
+}
+
+.background-image {
+  background-image: url(../images/boards.jpg);
+}
+
+/* line card */
+.line-card {
+    background-image: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+}
+
+.image-dimensions {
+    width: 100%;
+    height: 100%;
+}
+
+.top-margins {
+  margin-top: 15px !important;
+}
+
+/* For the dropdown menus */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+a {
+    color: black !important;
+}
+
+li a:hover {
+    background-color: yellow;
+    text-decoration: none !important;
+}
+
+.fa-fan:hover {
+    transition: 0.70s;
+    transform: rotate(360deg);
+}
+
+.dropdown-toggle::after {
+    content: none !important;
+}
+
+.collapse:hover {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.stretch {
+  height: 100vh;
+}
+
+.ml-dimensions {
+  height: 400px !important;
+  width: auto;
+  text-align: center;
+}
+
+.form-field {
+  margin: 3rem;
+}
+
+.bee-data {
+  background-image: url(../images/honeycomb_tech.jpg);
+  background-position: 100%;
+}
+
+.plot-card {
+  background-image: url(../images/bee_colonies_chart.jpg);
+  background-size: cover;
+}
+
+fieldset {
+  padding: 20px !important;
+}
+
+/* Flip Card Graphics */
+.card {
+    background-color: transparent;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    padding: 0 !important;
+    width: 100%;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .my-card-body {
+    position: relative;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .card:hover .my-card-body {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .card-front, .card-back {
+    position: absolute;
+    /* width: 300px;
+    height: 200px; */
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .card-front {
+    background-color: white;
+    color: gold;
+    text-align: center;
+  }
+  
+  /* Style the back side */
+  .card-back {
+    background-color: white;
+    color: gold;
+    transform: rotateY(180deg);
+    text-align: center;
+    /* width: 300px;
+    height: 200px; */
+  }

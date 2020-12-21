@@ -52,7 +52,7 @@ function buildMap(bee) {
             //console.log(state_abbrev);
             //console.log(rent_data);
             console.log(honeyByYear['lbs_of_honey']);
-            console.log(honeyByYear[bee]);
+            //console.log(honeyByYear[bee]);
             
             
             var frames = []
@@ -61,8 +61,8 @@ function buildMap(bee) {
             var n = 32;
             var num = 1987;
             for (var i = 0; i <= n; i++) {
-              var z = honeyByYear.lbs_of_honey
-              var locations = honeyByYear.state_abbrev
+              var z = honeyByYear.i.lbs_of_honey
+              var locations = honeyByYear.i.state_abbrev
               frames[i] = {data: [{z: z, locations: locations, text: locations}], name: num}
               slider_steps.push ({
                   label: num.toString(),
