@@ -17,7 +17,7 @@
 }
 
 .container-fluid {
-    height: 100vh;
+    height: 100vh !important;
     width: 100vh;
 }
 
@@ -25,10 +25,10 @@
     color: white;
 }
 
-.background-image {
+
+body, html {
+  height: 100%;
   background-image: url(../images/boards.jpg);
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
 }
 
 /* line card */
@@ -178,4 +178,21 @@ form {
 
 div label{
   text-align: right  !important;
+}
+
+/* Charts Page */
+
+
+/* Visualizations Page */
+
+.visualization-sizer {
+ width: auto;
+ height: auto;
+ min-height: 350px;
+}
+
+.vis-card {
+  background-color: white;
+  border: 1px solid #f1f1f1;
+  padding: 0 !important;
 }
