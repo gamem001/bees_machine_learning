@@ -250,6 +250,7 @@ div label{
  width: auto;
  height: auto;
  min-height: 350px;
+ text-align: center;
 }
 
 .vis-card {
