@@ -1,4 +1,4 @@
-let state_names = ['ALABAMA','ALASKA','ARIZONA','ARKANSAS','CALIFORNIA','COLORADO','CONNECTICUT','DELAWARE','FLORIDA','GEORGIA','HAWAII','IDAHO','ILLINOIS','INDIANA','IOWA','KANSAS','KENTUCKY','LOUISIANA','MAINE','MARYLAND','MASSACHUSETTS','MICHIGAN','MINNESOTA','MISSISSIPPI','MISSOURI','MONTANA','NEBRASKA','NEVADA','NEW HAMPSHIRE','NEW JERSEY','NEW MEXICO','NEW YORK','NORTH CAROLINA','NORTH DAKOTA','OHIO','OKLAHOMA','OREGON','PENNSYLVANIA','RHODE ISLAND','SOUTH CAROLINA','SOUTH DAKOTA','TENNESSEE','TEXAS','UTAH','VERMONT','VIRGINIA','WASHINGTON','WEST VIRGINIA','WISCONSIN','WYOMING']
+let state_names = ['ARIZONA','CALIFORNIA','COLORADO','CONNECTICUT','FLORIDA','GEORGIA','IDAHO','ILLINOIS','INDIANA','IOWA','KENTUCKY', 'MARYLAND','MASSACHUSETTS','MICHIGAN','MINNESOTA','MISSOURI','MONTANA', 'NEW JERSEY', 'NEW YORK','NORTH CAROLINA', 'OHIO','OREGON','PENNSYLVANIA','TENNESSEE','TEXAS','UTAH','VERMONT','VIRGINIA','WASHINGTON','WEST VIRGINIA','WISCONSIN']
 
 
 state_names.forEach(dropDownMenu2 => {
@@ -61,8 +61,8 @@ function buildPlot(state) {
                     x: x,
                     y: y,
                     type: 'scatter',
-                    showlegend: false,
-                    name: data.commodity
+                    showlegend: true,
+                    name: commodity
                 };
                 
         
@@ -73,7 +73,7 @@ function buildPlot(state) {
                 title:'Crops by Colony Count',
                 hovermode: "closest",
                 hoverlabel: { bgcolor: "#FFF" },
-                legend: {orientation: 'h'},
+                legend: {orientation: 'r'},
                 xaxis: {
                     title: "Count of Colonies",
                 },
@@ -89,4 +89,4 @@ function buildPlot(state) {
         });
 };
 
-buildPlot('CALIFORNIA')
+buildPlot('ARIZONA')
