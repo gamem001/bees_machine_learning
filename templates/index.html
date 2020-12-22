@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/12323bd54c.js" crossorigin="anonymous"></script>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     </head>
 <body>
 <body>
@@ -22,30 +23,16 @@
                         <img class="image-dimensions" src="/static/images/beehive_icon.png" alt="Mr.Weatherbee Himself">
                         <ul class="list-unstyled-components" class="link-fonts" class="nav flex-sm-column flex-row">
                         <br>
-                            <a href="https://github.com/Asia-Hewett/weather_bees"><strong>Main</strong></a>
+                            <a href="/"><strong>Main</strong></a>
                             <li>
                                 <a href="https://github.com/Asia-Hewett/weather_bees"><i class="fas fa-fan"></i>&nbsp;About</a>
                             <li>
                                 <a href="/charts"><i class="fas fa-fan"></i>&nbsp;Charts</a>
                             </li>
-                            <li>
-                                <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-fan"></i>&nbsp;Services</a>
-                                <ul class="collapse list-unstyled" id="pageSubmenu">
-                                    <li>
-                                        <a href="https://sanantoniopestcontrol.com/bee-removal.html">Bee Relocation</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://thehoneytree.vpweb.com/">Beekeeping San Antonio</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.gretchenbeeranch.com/">San Antonio Honey</a>
-                                    </li>
-                                </ul>
-                            </li>
                             <br>
                             <p><strong>Resources</strong></p>
                             <li>
-                                <a href="#"><i class="fas fa-database"></i>&nbsp;Data</a>
+                                <a href="/data_used"><i class="fas fa-database"></i>&nbsp;Data</a>
                             </li>
                             <li>
                                 <a href="/visualizations"><i class="fas fa-chart-line"></i>&nbsp;Visualizations</a>
@@ -58,7 +45,7 @@
                             <br>
                                 <a href="https://github.com/KRuhl1662">Kristina |</a>
                                 <a href="https://github.com/gamem001">Melissa |</a>
-                                <a href="https://github.com/andrewzee23">Andrew </a>
+                                <a href="https://github.com/andrewzee23">Andrew |</a>
                                 <a href="https://asia-hewett.github.io/">Asia |</a>
                                 <a href="https://github.com/rmartinez944630">Rene</a>
                             </p>
@@ -172,7 +159,7 @@
                 </div>
             <div class="row justify-content-center"> 
                 <div class="col-6">
-                    <img src="../static/images/honeycomb_tech.jpg" class="img-fluid ml-dimensions second-row-top-margin" alt="Responsive image">
+                    <img src="../static/images/honeycomb_tech.jpg" class="ml-dimensions second-row-top-margin" alt="Responsive image">
                         <div class="ml-card card-img-overlay">
                             <form action="/" method="post">
                                 <fieldset>
@@ -193,7 +180,6 @@
                                     {{ form.cc_syn }}
                                         
                                 </fieldset>
-                                <br>
                                 <div>
                                 {{ form.submit }} {{ predicted }}
                                 </div>
@@ -202,18 +188,27 @@
                     </div>
                 <div class="col-6">
                     <div class="plot-card second-row-top-margin">
-                        <div class="line-plot-card">
-                            <img src="../static/images/bee_colonies_chart.jpg" class="img-fluid" alt="Responsive image">
-                        </div>                
-                    </div>
+                        <div class="well">
+                            <h5 class="white-bar">Select Data Set:</h5>
+                            <select class="white-bar" id="selDataset"></select>
+                        </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                            </div>
+                            <div id="myDiv" class="panel-body"></div>            
+                        </div>
+                    </div>             
                 </div>
-            </div>             
-            </div>
             </div>
         </div>
     </div>
 </div>
+<script src="../static/js/logic_KR.js"></script>
 <script src="https://d3js.org/d3.v6.min.js"></script>
-<script src="../static/js/andrew.js"></script>
+<script src="https://d3js.org/d3-color.v2.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 </body>
 </html>

@@ -22,11 +22,10 @@ var xAxis = svg.append("g")
 
 var y = d3.scaleLinear()
   .range([ height, 0]);
+
 var yAxis = svg.append("g")
   .attr("class", "myYaxis")
-
-
-
+  
 function update(selectedVar) {
 
   
@@ -82,8 +81,6 @@ function update(selectedVar) {
         .attr("cy", function(d) { return y(d[selectedVar]); })
         .attr("r", 6)
         .attr("fill", "#FCD615");
-
-
   })
 
 }
