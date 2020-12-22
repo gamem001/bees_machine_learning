@@ -1,5 +1,5 @@
 
-var margin = {top: 30, right: 30, bottom: 70, left: 60},
+var margin = {top: 30, right: 30, bottom: 130, left: 70},
     width = 760 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
 
@@ -25,7 +25,22 @@ var y = d3.scaleLinear()
 
 var yAxis = svg.append("g")
   .attr("class", "myYaxis")
-  
+
+
+svg.append('text')
+  .text('States')
+  .attr("transform","translate(" + (width/2) + " ," + (height + margin.top + 100) + ")")
+  .style('text-anchor','middle')
+
+svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left)
+    .attr("x",0 - (height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Colony Deaths");
+
+
 function update(selectedVar) {
 
   
@@ -47,7 +62,10 @@ function update(selectedVar) {
 
     
     y.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
-    yAxis.transition().duration(1000).call(d3.axisLeft(y));
+    yAxis
+      .transition()
+      .duration(1000)
+      .call(d3.axisLeft(y))
 
     
     var j = svg.selectAll(".myLine")
