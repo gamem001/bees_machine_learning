@@ -12,7 +12,6 @@ state_names.forEach(dropDownMenu2 => {
 // listens for when there is a change to the selDataset, when there is a change then it runs function updateDisplay
 d3.selectAll('#selState').on("change", handleState); 
 
-
 function handleState() {
     // use this to prevent the page from refreshing... may or may not be necessary.
     d3.event.preventDefault();
@@ -28,23 +27,21 @@ function handleState() {
 };
 
 function buildPlot(state) {
-    // import fish with d3 and json and set dropdown menu to names array
-        const url = "/api/v1.0/commo";
-        d3.json(url).then(function(response_2) {
+// import fish with d3 and json and set dropdown menu to names array
+    const url = "/api/v1.0/commo";
+    d3.json(url, function(response_2) {
 
-            let filteredData = response_2.filter (data => data.state == state);
-            console.log(filteredData);
+        let filteredData = response_2.filter (data => data.state == state);
+        console.log(filteredData);
 
-           
-            let comod = filteredData.map(data => data.commodity)
-            console.log(comod);
+        
+        let comod = filteredData.map(data => data.commodity)
+        console.log(comod);
 
-            let uniqueArray = Array.from(new Set(comod));
-            console.log(uniqueArray)
-                      
-            let data = []
-
-            let name = []
+        let uniqueArray = Array.from(new Set(comod));
+        console.log(uniqueArray)
+                    
+        let data = []
 
             uniqueArray.forEach((commodity) => {
                 console.log(commodity);
@@ -84,9 +81,10 @@ function buildPlot(state) {
                 
                 
               
-              Plotly.newPlot('linechart', data, layout);
+            Plotly.newPlot('linechart', data, layout);
 
         });
 };
+
 
 buildPlot('ARIZONA')
