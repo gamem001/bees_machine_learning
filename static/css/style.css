@@ -346,3 +346,14 @@ div label{
   grid-row-start: 3;
   grid-column: 6 / span 2;
 }
+
+/* Machine Learning Walkthrough */
+
+.ml-card {
+  margin-top: 5%;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  background-color: white;
+}
