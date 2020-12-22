@@ -37,13 +37,21 @@
                 </div>
                 <div class="col-6">
                     <div class="vis-card visualization-sizer">
-                        <h1>Colony Count By State</h1>
-                        <div id="#scatter"></div>
+                        <div class="well">
+                            <h5>Select Data Set: </h5>
+                            <select id="selState"></select>
+                        </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                <h6 class="panel-title">Select a State</h6>
+                            <div id="linechart" class="panel-body"></div>
+                        </div>
                     </div>
                 </div>     
             </div>   
         </div>
 <script src="../static/js/andrew.js"></script>
 <script src="../static/js/melissa.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </body>
 </html>
