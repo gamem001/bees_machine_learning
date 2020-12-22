@@ -72,6 +72,9 @@ def food():
 
     colony_dict = crops.to_dict('records')
     
+    commodity_sort = commodity.sort_values(by=['count_colonies'])
+
+    colony_dict = commodity_sort.to_dict('records')
     return jsonify(colony_dict)
     
     session.close()

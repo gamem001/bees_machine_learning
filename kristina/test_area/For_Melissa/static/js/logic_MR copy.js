@@ -41,10 +41,10 @@ function buildPlot(state) {
 
             let uniqueArray = Array.from(new Set(comod));
             console.log(uniqueArray)
-                      
+            
             let data = []
 
-            let name = []
+            // create labels as []
 
             uniqueArray.forEach((commodity) => {
                 console.log(commodity);
@@ -62,11 +62,12 @@ function buildPlot(state) {
                     y: y,
                     type: 'scatter',
                     showlegend: false,
-                    name: data.commodity
-                };
+                    name: 
+                  };
                 
         
                 data.push(trace1)
+
             });
 
             let layout = {
