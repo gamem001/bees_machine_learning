@@ -88,7 +88,9 @@ def commodities():
     commodity.dropna(how='any', inplace=True)
     # commodity_clean = commodity.loc[commodity["count_colonies"] == 'NaN']
 
-    colony_dict = commodity.to_dict('records')
+    commodity_sort = commodity.sort_values(by=['count_colonies'])
+
+    colony_dict = commodity_sort.to_dict('records')
 
     return jsonify(colony_dict)
 
