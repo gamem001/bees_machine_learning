@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+
+<body>
+  
+<!-- <button onclick="update('deadout')">Deadout</button> -->
+<!-- <button onclick="update('cc_syn')">Colony Collapse</button> -->
+
+
+<!-- <div id="my_dataviz"></div> -->
+
+<div class="well">
+  <h5>Select Data Set: </h5>
+  <select id="selState"></select>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h6 class="panel-title">Select a State</h6>
+  </div>
+  <div id="linechart" class="panel-body"></div>
+</div>
+
+
+<!-- <script>
+
+  // set the dimensions and margins of the graph
+  var margin = {top: 50, right: 60, bottom: 100, left: 90},
+      width = 960 - margin.left - margin.right,
+      height = 800 - margin.top - margin.bottom;
+  
+  // append the svg object to the body of the page
+  var svg = d3.select("#my_dataviz")
+    .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+  
+  // Initialize the X axis
+  var x = d3.scaleBand()
+    .range([ 0, width ])
+    .padding(1);
+  var xAxis = svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+  
+  // Initialize the Y axis
+  var y = d3.scaleLinear()
+    .range([ height, 0]);
+  var yAxis = svg.append("g")
+    .attr("class", "myYaxis")
+    
+  
+  
+  // A function that create / update the plot for a given variable:
+  function update(selectedVar) {
+  
+    // Parse the Data
+    d3.json("/api/v1.0/decline", function(data) {
+  
+      // X axis
+      x.domain(data.map(function(d) { return d.state; }))
+      xAxis
+        .transition()
+        .duration(1000)
+        .call(d3.axisBottom(x))
+      .selectAll('text')
+        .attr('y',0)
+        .attr('x',12)
+        .attr('dy','.35em')
+        .attr('transform', 'rotate(90)')
+        .style('text-anchor','start')
+
+      // Add Y axis
+      y.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
+      yAxis
+        .transition()
+        .duration(1000)
+        .call(d3.axisLeft(y))
+  
+      // variable u: map data to existing circle
+      var j = svg.selectAll(".myLine")
+        .data(data)
+      // update lines
+      j
+        .enter()
+        .append("line")
+        .attr("class", "myLine")
+        .merge(j)
+        .transition()
+        .duration(1000)
+          .attr("x1", function(d) { console.log(x(d.state)) ; return x(d.state);})
+          .attr("x2", function(d) { return x(d.state); })
+          .attr("y1", y(0))
+          .attr("y2", function(d) { return y(d[selectedVar]); })
+          .attr("stroke", "orange")
+  
+  
+      // variable u: map data to existing circle
+      var u = svg.selectAll("circle")
+        .data(data)
+      // update bars
+      u
+        .enter()
+        .append("circle")
+        .merge(u)
+        .transition()
+        .duration(1000)
+          .attr("cx", function(d) { return x(d.state); })
+          .attr("cy", function(d) { return y(d[selectedVar]); })
+          .attr("r", 8)
+          .attr("fill", "#69b3a2");
+  
+  
+    })
+  
+  }
+  
+  // Initialize plot
+  update('deadout')
+  
+  </script> -->
+  <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+  
+  <script src="https://d3js.org/d3-color.v2.min.js"></script>
+  <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="../static/js/melissa.js"></script>
+</body>
